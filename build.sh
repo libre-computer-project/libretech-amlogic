@@ -50,6 +50,16 @@ if [ ! -d "$LBS" ]; then
 	cd ..
 fi
 
+LBS_AML=$LBS/vendor/amlogic
+if [ ! -d "$LBS_AML" ]; then
+	mkdir -p "$LBS_AML"
+fi
+
+LBS_AML_BLX=$LBS_AML/blx
+if [ ! -d "$LBS_AML_BLX" ]; then
+	git clone --single-branch --branch master --depth 1 https://github.com/libre-computer-project/libretech-amlogic-blx.git $LBS_AML_BLX
+fi
+
 SOC_ARCH=${AML_BOARD%%_*}
 
 # copy newly built bl2, bl30, bl31
