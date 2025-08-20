@@ -104,6 +104,7 @@ if [ "$LBR_BRANCH" != "$LC_BR_BRANCH" ]; then
 	fi
 fi
 
+make librecomputer/aml-a311d-cc/suspend-resume_defconfig
 make -j `nproc --all`
 cd ..
 cp $LBR/output/images/sdcard.img .
