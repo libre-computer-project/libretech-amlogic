@@ -4,6 +4,7 @@
 ```
 git clone https://github.com/libre-computer-project/libretech-amlogic.git --single-branch --branch suspend-resume/aml-a311d-cc
 cd libretech-amlogic
+./setup.sh
 ./build.sh
 sudo dd if=sdcard.img of=/dev/mmcblk0 bs=1M
 ```
@@ -14,10 +15,15 @@ sudo dd if=sdcard.img of=/dev/mmcblk0 bs=1M
 2. Connect UART cable to the 3-pin header next to the 40-pin header.
 3. Insert the MicroSD card into the board.
 4. Attach Type-C power.
-5. Board will boot and run minimal Linux initramfs and suspend 5 seconds after bootup.
-6. Observe UART output.
-7. Wake board by sending space key over UART.
-8. Linux should resume back to console if no glitch.
+5. Board will boot and run minimal Linux initramfs.
+6. Manually trigger suspend via `echo mem > /sys/power/state`.
+7. Observe UART output.
+8. Wake board by sending space key over UART.
+9. Linux should resume back to console if no glitch.
+
+## Automated Script
+
+1. Use `suspend.sh`.
 
 ## Composition
 
