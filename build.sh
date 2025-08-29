@@ -89,6 +89,7 @@ if [ ! -d "$LBR" ]; then
 fi
 
 cp $LBS/out/$LC_BOARD $LBR/board/librecomputer/project/suspend-resume/$LC_BOARD
+cp $LBS/out/$LC_BOARD $LC_BOARD.blx
 
 # build upstream linux and package as image
 cd $LBR
